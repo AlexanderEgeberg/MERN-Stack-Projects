@@ -1,0 +1,12 @@
+.Vessel {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 15px;   
+}
+
+.card {
+    margin: 0px 10px;
+}
+.cardButton {
+    bottom: 0;
+}

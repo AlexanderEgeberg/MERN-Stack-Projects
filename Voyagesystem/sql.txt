@@ -1,0 +1,37 @@
+create table voyages (
+voyage_id int unsigned not null auto_increment,
+vesselId int unsigned not null,
+name varchar(25) not null,
+description varchar(255),
+image varchar(255) not null,
+foreign key (vesselId) references vessels(id) on delete cascade,
+primary key(voyage_id)
+);
+
+
+create table vessels (
+id int unsigned not null auto_increment,
+name varchar(16) not null,
+imo varchar(30) not null,
+description varchar(255),
+image varchar(255) not null,
+primary key(id)
+);
+
+INSERT INTO voyages
+VALUES (null,2,'ODY-2020-1','44000 MT LPG from Ulsan to Houstan','https://i.imgur.com/BpePwxW.png');
+
+INSERT INTO voyages
+VALUES (null,3,'IGA-2020-1','138 passengers from Copenhagen to Athens','https://i.imgur.com/Z1JKnhB.png');
+
+INSERT INTO voyages
+VALUES (null,3,'ICA-2020-2','137 passengers from Athens to Copenhagen','https://i.imgur.com/Ew3IbTS.png');
+
+
+
+SELECT
+voy.voyage_id, voy.vesselId, voy.name, voy.description, voy.image
+from vessels as v,
+voyages as voy
+where v.id = 3
+and voy.vesselId = v.id;

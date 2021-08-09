@@ -1,0 +1,30 @@
+import { db } from "./Backend/models/Vessel"
+
+//Create en sammenlign, tilsvarende af en SQL table.
+db.createCollection('<Collection navn>')
+//CRUD - Create objekt i tilsvarende collection
+//Inserter et JSON objekt i databasens collection.
+db.collection.insert(
+{eksempel: 'test'}
+)
+
+//CRUD - Read objekter
+//Finder alle objekter i collection
+db.collection.find()
+
+//Finder alle objekter med JSON strukturen eksempel: 'test'
+db.collection.find({eksempel: 'test'})
+
+//CRUD - Update opdaterer et JSON objekt med et nyt JSON objekt
+db.collection.update({eksempel: 'test'},{eksempel: 'opdateret'})
+
+//CRUD - Delete sletter et JSON objekt.
+db.collection.delete({eksempel: 'opdateret'})
+
+
+db.collection.delete(
+{
+    Fornavn: "Alexander",
+    Efternavn: "Egeberg"
+}
+)
